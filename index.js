@@ -11,9 +11,13 @@ app.get('/', (_, resp) => {
 });
 
 app.get('/profile', (_, resp) => {
-    const user = {name:'aryan', lastName:'sharma',city:'ghaziabad'};
+    const user = {name:'aryan', lastName:'sharma',city:'ghaziabad', skills:['react','js','redux','node']};
     resp.render('profile',{user});
 });
+
+app.get('/login',(_,resp) => {
+    resp.render('login')
+})
 
 app.get('/about', (_, resp) => {
     resp.sendFile(`${publicPath}/about.html`);

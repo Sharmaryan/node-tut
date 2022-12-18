@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   
+  <head>
     <title>Profile</title>
-</head>
-<body>
+  </head>
+  <body>
+    <%- include('common/header'); %>
     <h1>Welcome <%= user.name %></h1>
     <h1>from <%= user.city %></h1>
-</body>
+    <h2>skills</h2>
+    <% user.skills.forEach((item) => { %>
+    <li><%= item %></li>
+    <% }) %>
+  </body>
 </html>
