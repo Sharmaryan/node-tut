@@ -16,8 +16,22 @@ app.post('/create', async (req, res) => {
 app.get('/list', async (req, res) => {
     let data = await Products.find();
     res.send(data);
-        
+
 })
+
+app.delete('/delete/:_id', async (req, res) => {
+    let data = await Products.deleteOne(req.params);
+    res.send(data);
+
+})
+
+app.put('/update/:_id', async (req, res) => {
+    let data = await Products.updateOne(req.params,{$set:{name:'y 20'}});
+    res.send(data);
+
+})
+
+
 
 
 
