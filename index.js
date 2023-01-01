@@ -13,4 +13,12 @@ app.post('/create', async (req, res) => {
     res.send(result)
 })
 
+app.get('/list', async (req, res) => {
+    let data = await Products.find();
+    res.send(data);
+        
+})
+
+
+
 app.listen(5000);
